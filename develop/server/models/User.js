@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schema from bongo.js
-const bongoSchema = require('./bongo');
+const bongoSchema = require('./Bongo');
 
 const userSchema = new Schema(
   {
