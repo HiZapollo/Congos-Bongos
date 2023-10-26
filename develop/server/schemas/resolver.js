@@ -17,7 +17,7 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        login: async (parent, { email, password }) => {
+        login: async (parent, { email, sword }) => {
             const user = await User.findOne({ email });
 
             if (!user) {
@@ -34,22 +34,22 @@ const resolvers = {
       
             return { token, user };
         },
-        saveBook: async (parent, {input}, context) => {
+        saveBongo: async (parent, {input}, context) => {
             if (context.user) {
                 const user = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: {...input} }},
+                    { $addToSet: { savedBongos: {...input} }},
                     { new: true, runValidators: true }
                 );
                 return user;
             }
             throw AuthenticationError;
         },
-        removeBook: async (parent, { bookId }, context) => {
+        removeBongo: async (parent, { bongoId }, context) => {
             if (context.user) {
                 const user = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedBooks: { bookId: bookId }} },
+                    { $pull: { savedBongos: { bongoId: bongoId }} },
                     { new: true}
                 );
                 return user;
