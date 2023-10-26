@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "cd develop && npm start",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "develop": "cd develop && npm run develop",
+    "install": "cd develop && npm install",
+    "seed": "cd develop && npm run seed",
+    "build": "cd develop && npm run build"
   },
   "keywords": [],
   "author": "",
