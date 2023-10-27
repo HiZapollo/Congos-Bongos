@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 const bongoSchema = new Schema({
@@ -6,7 +6,7 @@ const bongoSchema = new Schema({
     type: String,
     required: true,
   },
-bongoid: {
+  bongoId: {
     type: String,
     required: true,
   },
@@ -20,6 +20,12 @@ bongoid: {
     type: String,
     required: true,
   },
+  price: {
+    type: Number
+  },
 });
 
-module.exports = bongoSchema;
+// Define Bongo model using the schema
+const Bongo = model('Bongo', bongoSchema);
+
+module.exports = Bongo;
