@@ -15,12 +15,6 @@ Congo Bongo is the premier online destination for Congo enthusiasts. Dive into o
 ## Features
 
 - **Congo Marketplace**: Discover a wide variety of Congos, from beginner-friendly models to professional-grade instruments.
-  
-- **Learning Hub**: Access tutorials, articles, and video lessons tailored for all skill levels.
-
-- **Community Forum**: Connect with fellow enthusiasts, share your musical journey, and get feedback on your performances.
-
-- **Events Calendar**: Stay updated with Congo workshops, concerts, and events happening around the world.
 
 ## Installation
 
