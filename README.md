@@ -10,7 +10,6 @@ Congo Bongo is the premier online destination for Congo enthusiasts. Dive into o
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -72,9 +71,6 @@ We welcome contributions from the community! If you'd like to contribute, please
 3. Make your changes.
 4. Submit a pull request detailing your changes.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Contact
 
