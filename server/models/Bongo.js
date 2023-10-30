@@ -22,11 +22,13 @@ const bongoSchema = new Schema({
   price: {
     type: Number
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category',
-    required: true,
-  }
+  types: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Type',
+      required: true,
+    }
+  ]
 });
 
 // Define Bongo model using the schema
