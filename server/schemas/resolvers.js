@@ -1,17 +1,17 @@
-const { User, Bongo, Category, Order  } = require('../models')
+const { User, Bongo, Type, Order  } = require('../models')
 const { signToken, AuthenticationError } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_51O74PnDyudsQNOyEZIPgELCj3gGjDvFoLW5hPKjW2Lx5k7FGEQ3gkDKI7Hp5k0xpG3JzOMdXCVUMzYEItHJwFRUO00jJ9o07Uq');
 
 const resolvers = {
     Query: {
       categories: async () => {
-        return await Category.find();
+        return await Type.find();
       },
-      Bongos: async (parent, { category, name }) => {
+      Bongos: async (parent, { types, name }) => {
         const params = {};
   
-        if (category) {
-          params.category = category;
+        if (types) {
+          params.types = types;
         }
   
         if (name) {
@@ -20,7 +20,7 @@ const resolvers = {
           };
         }
   
-        return await Bongo.find(params).populate('category');
+        return await Bongo.find(params).populate('types');
       },
       Bongo: async (parent, { _id }) => {
         return await Bongo.findById(_id).populate('category');
@@ -29,7 +29,7 @@ const resolvers = {
         if (context.user) {
           const user = await User.findById(context.user._id).populate({
             path: 'orders.Bongos',
-            populate: 'category'
+            populate: 'types'
           });
   
           user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
@@ -43,7 +43,7 @@ const resolvers = {
         if (context.user) {
           const user = await User.findById(context.user._id).populate({
             path: 'orders.Bongos',
-            populate: 'category'
+            populate: 'types'
           });
   
           return user.orders.id(_id);
