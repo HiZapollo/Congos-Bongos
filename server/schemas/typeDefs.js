@@ -1,45 +1,71 @@
 const typeDefs = `
-    type User {
-        _id: ID 
-        username: String
-        email: String
-        bongoCount: Int 
-        savedbongos: [Bongo]
-    }
+        type Type {
+            _id: ID
+            name: String!
+        }
 
-    type Bongo {
-        bongoId: String!
-        authors: [String]
-        description: String!
-        title: String!
-        image: String
-        link: String
-    }
+        type User {
+            _id: ID
+            username: String!
+            email: String!
+            password: String!
+            savedBongos: [Order]
+            bongoCount: Int
+        }
 
-    input BongoInput {
-        bongoId: String!
-        authors: [String]
-        description: String!
-        title: String!
-        image: String
-        link: String
-    }
+        type Bongo {
+            _id: ID
+            name: String!
+            description: String!
+            image: String
+            quantity: Int
+            price: Float
+            types: [Type]
+        }
 
-    type Auth {
-        token: ID!
-        user: User
-    }
+        type Order {
+            _id: ID
+            purchaseDate: String
+            Bongos: [Bongo]
+        }
 
-    type Query {
-        me: User
-    }
+        input UserInput {
+            username: String!
+            email: String!
+            password: String!
+            savedBongos: [OrderInput]
+            # Define other required fields for input if needed
+        }
 
-    type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
-        saveBongo(input: BongoInput!): User
-        removeBongo(bongoId: String!): User
-    }
+        input BongoInput {
+            name: String!
+            description: String!
+            image: String
+            quantity: Int
+            price: Float
+            types: [ID] # Assuming this is a list of Type IDs
+        }
+
+        input OrderInput {
+            purchaseDate: String
+            Bongos: [ID] # Assuming this is a list of Bongo IDs
+        }
+
+        type Auth {
+            token: ID!
+            user: User
+        }
+
+        type Query {
+            me: User
+        }
+
+        type Mutation {
+            login(email: String!, password: String!): Auth
+            addUser(username: String!, email: String!, password: String!): Auth
+            saveBongo(input: BongoInput!): User
+            removeBongo(bongoId: String!): User
+        }
 `;
 
 module.exports = typeDefs;

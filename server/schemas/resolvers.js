@@ -4,10 +4,10 @@ const stripe = require('stripe')('sk_test_51O74PnDyudsQNOyEZIPgELCj3gGjDvFoLW5hP
 
 const resolvers = {
     Query: {
-      categories: async () => {
+      types: async () => {
         return await Type.find();
       },
-      Bongos: async (parent, { types, name }) => {
+      bongos: async (parent, { types, name }) => {
         const params = {};
   
         if (types) {
@@ -22,7 +22,7 @@ const resolvers = {
   
         return await Bongo.find(params).populate('types');
       },
-      Bongo: async (parent, { _id }) => {
+      bongo: async (parent, { _id }) => {
         return await Bongo.findById(_id).populate('category');
       },
       user: async (parent, args, context) => {
