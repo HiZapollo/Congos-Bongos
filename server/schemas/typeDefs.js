@@ -25,7 +25,7 @@ const typeDefs = `
 
         type Order {
             _id: ID
-            purchaseDate: Date
+            purchaseDate: String
             Bongos: [Bongo]
         }
 
@@ -47,25 +47,25 @@ const typeDefs = `
         }
 
         input OrderInput {
-            purchaseDate: Date
+            purchaseDate: String
             Bongos: [ID] # Assuming this is a list of Bongo IDs
         }
 
-            type Auth {
-                token: ID!
-                user: User
-            }
+        type Auth {
+            token: ID!
+            user: User
+        }
 
-            type Query {
-                me: User
-            }
+        type Query {
+            me: User
+        }
 
-            type Mutation {
-                login(email: String!, password: String!): Auth
-                addUser(username: String!, email: String!, password: String!): Auth
-                saveBongo(input: BongoInput!): User
-                removeBongo(bongoId: String!): User
-            }
+        type Mutation {
+            login(email: String!, password: String!): Auth
+            addUser(username: String!, email: String!, password: String!): Auth
+            saveBongo(input: BongoInput!): User
+            removeBongo(bongoId: String!): User
+        }
 `;
 
 module.exports = typeDefs;
