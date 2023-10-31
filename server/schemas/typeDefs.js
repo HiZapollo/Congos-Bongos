@@ -50,18 +50,23 @@ const typeDefs = `
             purchaseDate: String
             Bongos: [ID] # Assuming this is a list of Bongo IDs
         }
-
+        
+        type Checkout {
+            session: ID
+          }
+          
         type Auth {
             token: ID!
             user: User
         }
 
         type Query {
-            me: User
-            categories: [Type] # Add a query to retrieve all categories
-            Bongos(types: [ID], name: String): [Bongo] # Query to fetch Bongos based on type or name
-            Bongo(_id: ID): Bongo # Query to get a single Bongo by ID
+            types: [Type] # Add a query to retrieve all categories
+            bongos(types: [ID], name: String): [Bongo] # Query to fetch Bongos based on type or name
+            bongo(_id: ID): Bongo # Query to get a single Bongo by ID
             order(_id: ID): Order # Query to retrieve a single Order by ID
+            user(_id: ID): User # Query to
+            checkout(bongos: [BongoInput]): Checkout
         }
     
         type Mutation {
