@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// ProductDetail.jsx
+import { useState, useEffect } from 'react';
 
 function ProductDetail({ match }) {
     // Local state to store the product details
@@ -6,7 +7,6 @@ function ProductDetail({ match }) {
 
     useEffect(() => {
         // Fetch product details based on the product ID from the route parameters
-        // This assumes you have an API endpoint set up to fetch product details by ID
         fetch(`/api/products/${match.params.productId}`)
             .then(response => response.json())
             .then(data => setProduct(data))
