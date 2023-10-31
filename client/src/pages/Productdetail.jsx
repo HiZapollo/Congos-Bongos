@@ -1,5 +1,5 @@
-// ProductDetail.jsx
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 function ProductDetail({ match }) {
     // Local state to store the product details
@@ -24,5 +24,13 @@ function ProductDetail({ match }) {
         </div>
     );
 }
+
+ProductDetail.propTypes = {
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            productId: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
+};
 
 export default ProductDetail;
