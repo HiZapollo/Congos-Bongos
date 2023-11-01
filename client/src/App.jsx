@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Aboutus from './pages/Aboutus';
 import Error from './pages/Error';
 import Home from './pages/Home';
@@ -47,15 +47,15 @@ function App() {
             </nav>
 
             {/* Routes */}
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={Aboutus} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/product/:productId" component={ProductDetail} />
-                <Route path="/search" component={SearchResult} />
-                <Route component={Error} />
-            </Switch>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<Aboutus />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/product/:productId" element={<ProductDetail />} />
+                <Route path="/search" element={<SearchResult />} />
+                <Route path="*" element={<Error />} />
+            </Routes>
         </Router>
     );
 }
