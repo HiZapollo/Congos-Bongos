@@ -1,43 +1,65 @@
-export default {
-    // Add a product to the cart
-    ADD_TO_CART(state, { product, quantity }) {
-      const productInCart = state.cart.find(item => item.product.id === product.id);
-      if (productInCart) {
-        productInCart.quantity += quantity;
-      } else {
-        state.cart.push({ product, quantity });
-      }
-    },
-  
-    // Remove a product from the cart
-    REMOVE_FROM_CART(state, productId) {
-      const index = state.cart.findIndex(item => item.product.id === productId);
-      if (index !== -1) {
-        state.cart.splice(index, 1);
-      }
-    },
-  
-    // Update the quantity of a specific product in the cart
-    UPDATE_CART_ITEM(state, { productId, quantity }) {
-      const productInCart = state.cart.find(item => item.product.id === productId);
-      if (productInCart) {
-        productInCart.quantity = quantity;
-      }
-    },
-  
-    // Clear all items from the cart
-    CLEAR_CART(state) {
-      state.cart = [];
-    },
-  
-    // Set the list of products
-    SET_PRODUCTS(state, products) {
-      state.products = products;
-    },
-  
-    // Set the detailed information of a product
-    SET_PRODUCT_DETAIL(state, productDetail) {
-      state.productDetail = productDetail;
+import { gql } from '@apollo/client';
+
+export const MUTATION_ADD_BONGO = gql`
+  mutation addBongo($input: BongoInput!) {
+    addBongo(input: $input) {
+      id
+      name
+      description
     }
-  };
-  
+  }
+`;
+
+export const MUTATION_UPDATE_BONGO = gql`
+  mutation updateBongo($id: ID!, $input: BongoInput!) {
+    updateBongo(id: $id, input: $input) {
+      id
+      name
+      description
+    }
+  }
+`;
+
+export const MUTATION_DELETE_BONGO = gql`
+  mutation deleteBongo($id: ID!) {
+    deleteBongo(id: $id) {
+      id
+    }
+  }
+`;
+
+export const MUTATION_SIGNUP_USER = gql`
+  mutation signup($input: SignupInput!) {
+    signup(input: $input) {
+      token
+      user {
+        id
+        username
+      }
+    }
+  }
+`;
+
+export const MUTATION_LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        id
+        username
+      }
+    }
+  }
+`;
+
+export const MUTATION_ADD_ORDER = gql`
+  mutation addOrder($bongos: [ID!]!) {
+    addOrder(bongos: $bongos) {
+      purchaseDate
+      Bongos {
+        id
+        name
+      }
+    }
+  }
+`;
