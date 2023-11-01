@@ -1,42 +1,79 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #f5e9d9;
+  background-image: url(''); /* Logo will go here */
+  background-repeat: repeat;
+  color: #5d473a;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 1px solid #a58f7f;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight white background to make content pop */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  border-bottom: 2px solid #a58f7f;
+  padding: 1rem 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  font-family: 'Dancing Script', cursive; /* Gives a bit of flair to the title */
+  font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+nav {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5d473a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #a58f7f;
+  color: #fff;
 }
 
 .card {
+  background-color: #f5e9d9;
+  border: 1px solid #a58f7f;
+  border-radius: 8px;
   padding: 2em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .read-the-docs {
   color: #888;
+  font-style: italic;
+}
+
+/* Remove the logo styles if they are not being used */
+.logo {
+  display: none;
+}
+
+/* Additional Styles */
+button {
+  background-color: #5d473a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a58f7f;
 }
