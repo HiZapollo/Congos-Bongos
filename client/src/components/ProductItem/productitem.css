@@ -1,0 +1,10 @@
+.bongo-card{
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.bongo-pic {
+    max-width: 50%;
+    height: auto;
+    /* Add any additional styles you might need */
+  }

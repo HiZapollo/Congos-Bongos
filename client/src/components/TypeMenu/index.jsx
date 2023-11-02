@@ -43,7 +43,7 @@ function TypeMenu() {
   };
 
   return (
-    <div>
+    <div className='type-container'>
       <h2>Choose a Type:</h2>
       <div className="button-container">
         {types.map((item) => (
