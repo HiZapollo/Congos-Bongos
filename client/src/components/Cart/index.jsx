@@ -19,10 +19,8 @@ const Cart = () => {
   // We check to see if there is a data object that exists, if so this means that a checkout session was returned from the backend
   // Then we should redirect to the checkout with a reference to our session id
   useEffect(() => {
-    console.log(data)
     if (data) {
       stripePromise.then((res) => {
-        console.log(data.checkout.session);
         res.redirectToCheckout({ sessionId: data.checkout.session });
       });
     }
@@ -56,7 +54,6 @@ const Cart = () => {
   // When the submit checkout method is invoked, loop through each item in the cart
   // Add each item id to the productIds array and then invoke the getCheckout query passing an object containing the id for all our products
   function submitCheckout() {
-    console.log('submitCheckout');
     getCheckout({
       variables: { 
         bongos: [...state.cart],
