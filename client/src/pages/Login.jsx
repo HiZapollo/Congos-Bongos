@@ -33,7 +33,7 @@ function Login(props) {
     <div className="container">
       <div className="box">
         <h2>Login</h2>
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="flex-row">
             <label htmlFor="email">Email</label>
             <input
