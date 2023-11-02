@@ -10,7 +10,7 @@ import spinner from '../../assets/spinner.gif';
 function ProductList() {
   const [state, dispatch] = useStoreContext();
 
-  const { currentCategory } = state;
+  const { currentType } = state;
 
   const { loading, data } = useQuery(GET_BONGOS_BY_TYPE_OR_NAME);
 
@@ -18,28 +18,28 @@ function ProductList() {
     if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: data.products,
+        products: data.bongos,
       });
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+      data.bongos.forEach((bongo) => {
+        idbPromise('products', 'put', bongo);
       });
     } else if (!loading) {
-      idbPromise('products', 'get').then((products) => {
+      idbPromise('products', 'get').then((bongos) => {
         dispatch({
           type: UPDATE_PRODUCTS,
-          products: products,
+          products: bongos,
         });
       });
     }
   }, [data, loading, dispatch]);
 
   function filterProducts() {
-    if (!currentCategory) {
+    if (!currentType) {
       return state.products;
     }
 
     return state.products.filter(
-      (product) => product.category._id === currentCategory
+      (product) => product.types._id === currentType
     );
   }
 
