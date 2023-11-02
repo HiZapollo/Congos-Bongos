@@ -74,7 +74,7 @@ const typeDefs = `
             addUser(username: String!, email: String!, password: String!): Auth
             saveBongo(input: BongoInput!): User
             removeBongo(bongoId: ID!): User
-            addOrder(Bongos: [ID]!): Order # Mutation to add an Order based on Bongo IDs
+            addOrder(bongos: [ID]!): Order # Mutation to add an Order based on Bongo IDs
             updateUser(username: String, email: String): User # Mutation to update user details
             updateBongo(_id: ID!, quantity: Int): Bongo # Mutation to update Bongo quantity
         }

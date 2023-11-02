@@ -3,7 +3,7 @@ import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
-import { GET_SINGLE_BONGO } from '../../utils/queries';
+import { GET_BONGOS_BY_TYPE_OR_NAME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 import './productlist.css';
@@ -13,7 +13,7 @@ function ProductList() {
 
   const { currentType } = state;
 
-  const { loading, data } = useQuery(GET_SINGLE_BONGO);
+  const { loading, data } = useQuery(GET_BONGOS_BY_TYPE_OR_NAME);
 
   useEffect(() => {
     if (data) {
