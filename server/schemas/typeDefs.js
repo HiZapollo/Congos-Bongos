@@ -38,8 +38,8 @@ const typeDefs = `
         }
 
         input BongoInput {
-            name: String!
-            description: String!
+            name: String
+            description: String
             image: String
             quantity: Int
             price: Float
