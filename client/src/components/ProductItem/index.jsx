@@ -40,7 +40,7 @@ function ProductItem(item) {
 
   return (
     <div className="bongo-card">
-      <Link to={`/products/${_id}`}>
+      <Link to={`/product/${_id}`}>
         <img className="bongo-pic"
           alt={name}
           src={`/images/${image}`}
