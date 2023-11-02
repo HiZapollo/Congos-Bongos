@@ -6,7 +6,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%; /* Set the header width to 100% */
-    padding: 10px;
+    padding: 10px 0px;
     background-color: #333;
     color: white;
     height: 70px; /* Set a fixed height for the header */
@@ -70,7 +70,13 @@ header {
       margin-bottom: 10px; /* Add some space below the h1 */
     }
   
-    header img {
+    header img[alt="Home"] {
       margin: 10px 0; /* Adjust margin for logo and profile image */
+      width: 110px;
+      height: 110px;
+    }
+
+    header nav ul{
+      padding: 0;
     }
   }
