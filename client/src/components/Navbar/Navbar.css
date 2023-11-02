@@ -1,9 +1,7 @@
 /* navbar.css */
 
-
-  
-  /* Entire header */
-  header {
+/* Entire header */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,4 +49,23 @@
     position: absolute; /* Position absolutely within the header */
     left: 50%; /* Set the left position to 50% */
     transform: translateX(-50%); /* Adjust to center horizontally */
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    header {
+      height: auto; /* Change the height to 'auto' for responsive height */
+      flex-direction: column; /* Arrange items in a column for mobile */
+      text-align: center; /* Center the text */
+    }
+  
+    h1 {
+      position: static; /* Return the h1 position to 'static' for normal flow */
+      transform: none; /* Remove the transform */
+      margin-bottom: 10px; /* Add some space below the h1 */
+    }
+  
+    header img {
+      margin: 10px 0; /* Adjust margin for logo and profile image */
+    }
   }
