@@ -8,15 +8,16 @@ function Nav() {
             return (
                 <ul className="flex-row">
                     <li className="mx-1">
-                        <Link to="/orderHistory">
-                            Order History
-                        </Link>
-                    </li>
-                    <li className="mx-1">
                         {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                         <a href="/" onClick={() => Auth.logout()}>
                             Logout
                         </a>
+                    </li>
+                    {/*ADD LINK ONCE PROFILE PAGE IS MADE */}
+                    <li className="mx-1">
+                        <Link to="/">
+                            <img src={profileIcon.jpg} alt="Home" />
+                        </Link>
                     </li>
                 </ul>
             );
@@ -49,12 +50,6 @@ function Nav() {
             <nav>
                 {showNavigation()}
             </nav>
-            {/*ADD LINK ONCE PROFILE PAGE IS MADE */}
-            <li className="mx-1">
-                <Link to="/">
-                    <img src={profileIcon.jpg} alt="Home" />
-                </Link>
-            </li>
         </header>
     );
 }
