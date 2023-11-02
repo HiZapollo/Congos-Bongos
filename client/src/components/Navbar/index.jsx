@@ -42,7 +42,7 @@ function Nav() {
     return (
         <header className="flex-row px-1">
             <li className="mx-1">
-                <Link to="/home">
+                <Link to="/">
                     <img src={CongoBongoLogo.png} alt="Home" />
                 </Link>
             </li>
