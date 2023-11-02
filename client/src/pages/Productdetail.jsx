@@ -10,7 +10,7 @@ import {
   ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from '../utils/actions';
-import { GET_BONGOS_BY_TYPE_OR_NAME } from '../utils/queries';
+import { GET_SINGLE_BONGO } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
 
@@ -20,7 +20,7 @@ function Detail() {
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { loading, data } = useQuery(GET_BONGOS_BY_TYPE_OR_NAME);
+  const { loading, data } = useQuery(GET_SINGLE_BONGO);
 
   const { products, cart } = state;
 
