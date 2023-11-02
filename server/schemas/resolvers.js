@@ -62,7 +62,7 @@ const resolvers = {
           line_items.push({
             price_data: {
               currency: 'usd',
-              bongo_data: {
+              product_data: {
                 name: bongo.name,
                 description: bongo.description,
                 images: [`${url}/images/${bongo.image}`]

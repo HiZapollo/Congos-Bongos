@@ -1,0 +1,14 @@
+.bongo-list {
+    width: 50%;
+    margin: 0 auto; /* Set left and right margins to auto for horizontal centering */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: green;
+  }
+
+  @media (max-width: 768px) {
+    .bongo-list {
+      width: 100%;
+    }
+  }
