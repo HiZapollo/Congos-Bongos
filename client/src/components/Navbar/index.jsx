@@ -1,5 +1,7 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import CongoBongoLogo from "../../assets/CongoBongoLogo.png"
+import profileIcon from "../../assets/profileIcon.jpg"
 
 function Nav() {
 
@@ -16,7 +18,7 @@ function Nav() {
                     {/*ADD LINK ONCE PROFILE PAGE IS MADE */}
                     <li className="mx-1">
                         <Link to="/">
-                            <img src={profileIcon.jpg} alt="Home" />
+                            <img src={profileIcon} alt="Home" />
                         </Link>
                     </li>
                 </ul>
@@ -43,7 +45,7 @@ function Nav() {
         <header className="flex-row px-1">
             <li className="mx-1">
                 <Link to="/">
-                    <img src={CongoBongoLogo.png} alt="Home" />
+                    <img src={CongoBongoLogo} alt="Home" />
                 </Link>
             </li>
             <h1>CONGO BONGO</h1>

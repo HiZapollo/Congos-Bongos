@@ -5,7 +5,7 @@ import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { GET_BONGOS_BY_TYPE_OR_NAME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-//import spinner from '../../assets/spinner.gif';
+import spinner from '../../assets/spinner.gif';
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
