@@ -53,23 +53,23 @@ const resolvers = {
       },
       checkout: async (parent, args, context) => {
         const url = new URL(context.headers.referer).origin;
-        await Order.create({ Bongos: args.Bongos.map(({ _id }) => _id) });
+        await Order.create({ bongos: args.bongos.map(({ _id }) => _id) });
         // eslint-disable-next-line camelcase
         const line_items = [];
   
         // eslint-disable-next-line no-restricted-syntax
-        for (const Bongo of args.Bongos) {
+        for (const bongo of args.bongos) {
           line_items.push({
             price_data: {
               currency: 'usd',
-              Bongo_data: {
-                name: Bongo.name,
-                description: Bongo.description,
-                images: [`${url}/images/${Bongo.image}`]
+              bongo_data: {
+                name: bongo.name,
+                description: bongo.description,
+                images: [`${url}/images/${bongo.image}`]
               },
-              unit_amount: Bongo.price * 100,
+              unit_amount: bongo.price * 100,
             },
-            quantity: Bongo.purchaseQuantity,
+            quantity: bongo.purchaseQuantity,
           });
         }
   
