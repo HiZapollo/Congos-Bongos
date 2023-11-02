@@ -1,36 +1,117 @@
-import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
 
-function ProductDetail({ match }) {
-    // Local state to store the product details
-    const [product, setProduct] = useState({});
+import Cart from '../components/Cart';
+import { useStoreContext } from '../utils/GlobalState';
+import {
+  REMOVE_FROM_CART,
+  UPDATE_CART_QUANTITY,
+  ADD_TO_CART,
+  UPDATE_PRODUCTS,
+} from '../utils/actions';
+import { GET_BONGOS_BY_TYPE_OR_NAME } from '../utils/queries';
+import { idbPromise } from '../utils/helpers';
+import spinner from '../assets/spinner.gif';
 
-    useEffect(() => {
-        // Fetch product details based on the product ID from the route parameters
-        fetch(`/api/products/${match.params.productId}`)
-            .then(response => response.json())
-            .then(data => setProduct(data))
-            .catch(error => console.error("Error fetching product details:", error));
-    }, [match.params.productId]);
+function Detail() {
+  const [state, dispatch] = useStoreContext();
+  const { id } = useParams();
 
-    return (
-        <div className="product-detail-container">
-            <h1>{product.name}</h1>
-            <img src={product.imageUrl} alt={product.name} />
-            <p>Price: ${product.price}</p>
-            <p>Category: {product.category}</p>
-            <p>Description: {product.description}</p>
-            <button>Add to Cart</button>
+  const [currentProduct, setCurrentProduct] = useState({});
+
+  const { loading, data } = useQuery(GET_BONGOS_BY_TYPE_OR_NAME);
+
+  const { products, cart } = state;
+
+  useEffect(() => {
+    // already in global store
+    if (products.length) {
+      setCurrentProduct(products.find((product) => product._id === id));
+    }
+    // retrieved from server
+    else if (data) {
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: data.bongos,
+      });
+
+      data.bongos.forEach((bongo) => {
+        idbPromise('products', 'put', bongo);
+      });
+    }
+    // get cache from idb
+    else if (!loading) {
+      idbPromise('products', 'get').then((indexedProducts) => {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: indexedProducts,
+        });
+      });
+    }
+  }, [products, data, loading, dispatch, id]);
+
+  const addToCart = () => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === id);
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+      idbPromise('cart', 'put', {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...currentProduct, purchaseQuantity: 1 },
+      });
+      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+    }
+  };
+
+  const removeFromCart = () => {
+    dispatch({
+      type: REMOVE_FROM_CART,
+      _id: currentProduct._id,
+    });
+
+    idbPromise('cart', 'delete', { ...currentProduct });
+  };
+
+  return (
+    <>
+      {currentProduct && cart ? (
+        <div className="container my-1">
+          <Link to="/">← Back to Products</Link>
+
+          <h2>{currentProduct.name}</h2>
+
+          <p>{currentProduct.description}</p>
+
+          <p>
+            <strong>Price:</strong>${currentProduct.price}{' '}
+            <button onClick={addToCart}>Add to Cart</button>
+            <button
+              disabled={!cart.find((p) => p._id === currentProduct._id)}
+              onClick={removeFromCart}
+            >
+              Remove from Cart
+            </button>
+          </p>
+
+          <img
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
         </div>
-    );
+      ) : null}
+      {loading ? <img src={spinner} alt="loading" /> : null}
+      <Cart />
+    </>
+  );
 }
 
-ProductDetail.propTypes = {
-    match: PropTypes.shape({
-        params: PropTypes.shape({
-            productId: PropTypes.string.isRequired,
-        }).isRequired,
-    }).isRequired,
-};
-
-export default ProductDetail;
+export default Detail;
