@@ -1,25 +1,37 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 const bongoSchema = new Schema({
-  description: {
+  name: {
     type: String,
     required: true,
+    trim: true
   },
-bongoid: {
+  description: {
     type: String,
     required: true,
   },
   image: {
     type: String,
   },
-  link: {
-    type: String,
+  quantity: {
+    type: Number,
+    min: 0,
+    default: 0
   },
-  title: {
-    type: String,
-    required: true,
+  price: {
+    type: Number
   },
+  types: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Type',
+      required: true,
+    }
+  ]
 });
 
-module.exports = bongoSchema;
+// Define Bongo model using the schema
+const Bongo = model('Bongo', bongoSchema);
+
+module.exports = Bongo;

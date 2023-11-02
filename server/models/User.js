@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schema from bongo.js
-const bongoSchema = require('./Bongo');
+const Order = require('./Order');
 
 const userSchema = new Schema(
   {
@@ -20,9 +20,10 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+      minlength: 5
     },
     // set savedBongos to be an array of data that adheres to the bongoSchema
-    savedBongos: [bongoSchema],
+    savedBongos: [Order.schema],
   },
   // set this to use virtual below
   {

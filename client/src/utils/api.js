@@ -69,4 +69,3 @@ export const registerUser = async (userInfo) => {
     }
 };
 
-// Future APi's go below here

@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import {
+    ApolloClient,
+    InMemoryCache,
+    ApolloProvider,
+    createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+// import Aboutus from './pages/Aboutus';
+// import Error from './pages/Error';
+// import Home from './pages/Home';
+// import Login from './pages/Login';
+// import ProductDetail from './pages/Productdetail';
+// import SearchResult from './pages/SearchResult';
+// import Signup from './pages/Signup';
+//import bongoLogo from './assets/bongo.svg'; // Assuming you have a bongo logo in assets
+import './App.css';
+
+const httpLink = createHttpLink({
+    uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : '',
+        },
+    };
+});
+
+const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+});
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <ApolloProvider client={client}>
+            {/*Add nav here - jr*/}
+            <Outlet />
+        </ApolloProvider>
+        // <Router>
+        //     <div className="header">
+        //         <a href="/" className="logo-link">
+        //             <img src={bongoLogo} className="logo" alt="Congo Bongos logo" />
+        //         </a>
+        //         <h1>Congo Bongos</h1>
+        //         <p>Your one-stop shop for all things Bongos!</p>
+        //     </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        //     {/* Navigation Links */}
+        //     <nav>
+        //         <Link to="/">Home</Link>
+        //         <Link to="/about">About Us</Link>
+        //         <Link to="/login">Login</Link>
+        //         <Link to="/signup">Signup</Link>
+        //         {/* Additional links can be added as needed */}
+        //     </nav>
+
+        //     {/* Routes */}
+        //     <Routes>
+        //         <Route path="/" element={<Home />} />
+        //         <Route path="/about" element={<Aboutus />} />
+        //         <Route path="/login" element={<Login />} />
+        //         <Route path="/signup" element={<Signup />} />
+        //         <Route path="/product/:productId" element={<ProductDetail />} />
+        //         <Route path="/search" element={<SearchResult />} />
+        //         <Route path="*" element={<Error />} />
+        //     </Routes>
+        // </Router>
+    );
 }
 
-export default App
+export default App;
