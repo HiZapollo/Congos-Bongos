@@ -30,40 +30,85 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+    <div className="container">
+      <div className="box">
+        <h2>Login</h2>
+        <form>
+          <div className="flex-row">
+            <label htmlFor="email">Email</label>
+            <input
+              placeholder="Enter your email"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange}
+            />
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          <div className="flex-row">
+            <label htmlFor="pwd">Password</label>
+            <input
+              placeholder="Enter your password"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-row flex-end">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+      <style jsx>{`
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f4f4f4;
+        }
+        .box {
+          width: 100%;
+          max-width: 400px;
+          padding: 2rem;
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+          background-color: #fff;
+          border-radius: 8px;
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 1.5rem;
+          color: #333;
+        }
+        .flex-row {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+        }
+        label {
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+          color: #555;
+        }
+        input {
+          padding: 0.75rem;
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        button {
+          padding: 0.75rem 1.5rem;
+          background-color: #333;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        button:hover {
+          background-color: rgb(115, 158, 122);
+        }
+      `}</style>
     </div>
   );
 }
