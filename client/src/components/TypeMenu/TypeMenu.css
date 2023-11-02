@@ -2,11 +2,13 @@
 
 /* Entire type menu container */
 .type-container {
-    margin: 10px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-  }
+  margin: 10px;
+  padding: 10px;
+ 
+  border-radius: 20px;
+  /* Creating a transparent gradient background */
+  background-image: radial-gradient( rgba(12, 136, 8, 1), rgb(8, 75, 8, 0));
+}
   
   /* Heading for type menu */
   h2 {
@@ -29,18 +31,20 @@
     flex: 1 0 45%; /* Set the width of buttons to occupy 45% of the container */
     margin-bottom: 12px;
     padding: 8px 12px;
-    background-color: #3498db;
-    color: white;
-    border: none;
+    background: linear-gradient(to top right, rgb(114, 96, 61), rgb(170, 143, 92));
+    color: #333;
+    border: grey 1px outset;
     border-radius: 4px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.6s ease;
     max-width: 125px;
     min-width: 125px;
   }
   
-  button:hover {
+  .type-button:hover {
+    border: grey 1px inset;
+    background: linear-gradient(to top right, rgb(170, 143, 92), rgb(114, 96, 61) );
     background-color: #2980b9;
   }
   

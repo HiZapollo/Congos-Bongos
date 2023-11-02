@@ -1,7 +1,7 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import CongoBongoLogo from "../../assets/CongoBongoLogo.png"
-import profileIcon from "../../assets/ProfileIcon.png"
+import profileIcon from "../../assets/profileIcon.png"
 import "./Navbar.css";
 function Nav() {
 
@@ -9,6 +9,11 @@ function Nav() {
         if (Auth.loggedIn()) {
             return (
                 <ul className="flex-row">
+                    <li>
+                        <Link to="/about">
+                            About Us
+                        </Link>
+                    </li>
                     <li className="mx-1">
                         {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                         <a href="/" onClick={() => Auth.logout()}>
@@ -16,11 +21,11 @@ function Nav() {
                         </a>
                     </li>
                     {/*ADD LINK ONCE PROFILE PAGE IS MADE */}
-                    <li className="mx-1">
+                    {/* <li className="mx-1">
                         <Link to="/">
                             <img src={profileIcon} alt="Home" />
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             );
         } else {

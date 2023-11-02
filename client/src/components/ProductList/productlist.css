@@ -1,14 +1,19 @@
 .bongo-list {
     width: 50%;
     margin: 0 auto; /* Set left and right margins to auto for horizontal centering */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: green;
+    padding: 1rem;
+    border-radius: 10px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+    /* background-color: green; */
+    background: radial-gradient(rgb(1, 182, 1), rgb(33, 71, 29));
   }
 
   @media (max-width: 768px) {
     .bongo-list {
-      width: 100%;
+      width: 95%;
     }
   }

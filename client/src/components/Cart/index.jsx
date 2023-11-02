@@ -7,6 +7,7 @@ import CartItem from '../Cartitem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
+import "./cart.css";
 //import './style.css';
 //a
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
@@ -99,7 +100,7 @@ const Cart = () => {
           <span role="img" aria-label="shocked">
             😱
           </span>
-          You haven't added anything to your cart yet!
+          You haven't added any of our bodacious bongos to your cart!
         </h3>
       )}
     </div>

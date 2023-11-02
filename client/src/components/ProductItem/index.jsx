@@ -40,18 +40,20 @@ function ProductItem(item) {
 
   return (
     <div className="bongo-card">
-      <Link to={`/product/${_id}`}>
-        <img className="bongo-pic"
-          alt={name}
-          src={`/images/${image}`}
-        />
-        <p>{name}</p>
-      </Link>
-      <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+      <div className="overlay">
+        <Link to={`/product/${_id}`}>
+          <img className="bongo-pic"
+            alt={name}
+            src={`/images/${image}`}
+          />
+          <p>{name}</p>
+        </Link>
+        <div>
+          <div>{quantity} {pluralize("item", quantity)} in stock</div>
+          <span>${price}</span>
+        </div>
+        <button onClick={addToCart}>+</button>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
     </div>
   );
 }
