@@ -1,7 +1,7 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import CongoBongoLogo from "../../assets/CongoBongoLogo.png"
-import profileIcon from "../../assets/ProfileIcon.png"
+import profileIcon from "../../assets/profileIcon.png"
 import "./Navbar.css";
 function Nav() {
 
