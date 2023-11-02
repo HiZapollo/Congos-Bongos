@@ -7,6 +7,7 @@ import {
 } from '../../utils/actions';
 import { GET_TYPES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import './TypeMenu.css';
 
 function TypeMenu() {
   const [state, dispatch] = useStoreContext();
@@ -44,21 +45,22 @@ function TypeMenu() {
   return (
     <div>
       <h2>Choose a Type:</h2>
-      {types.map((item) => (
-        <button
-          key={item._id}
-          onClick={() => {
-            handleClick(item._id);
-          }}
-        >
-          {item.name}
+      <div className="button-container">
+        {types.map((item) => (
+          <button className='type-button'
+            key={item._id}
+            onClick={() => {
+              handleClick(item._id);
+            }}
+          >
+            {item.name}
+          </button>
+        ))}
+        <button className='type-button' onClick={() => { handleClick('') }}>
+          All
         </button>
-      ))}
-      <button onClick={() => { handleClick('') }}>
-        All
-      </button>
+      </div>
     </div>
   );
 }
-
 export default TypeMenu;
