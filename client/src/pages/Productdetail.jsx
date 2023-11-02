@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import "../App.css"
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -84,8 +84,12 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+        <div className="product-page">
+
+          <img className="product-page-image"
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
 
           <h2>{currentProduct.name}</h2>
 
@@ -102,10 +106,7 @@ function Detail() {
             </button>
           </p>
 
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
