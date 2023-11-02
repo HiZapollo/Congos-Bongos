@@ -7,6 +7,7 @@ import {
   UPDATE_TYPES,
   UPDATE_CURRENT_TYPE,
   CLEAR_CART,
+  TOGGLE_CART
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -54,6 +55,11 @@ export const reducer = (state, action) => {
       };
     }
 
+    case TOGGLE_CART:
+      return {
+        ...state,
+        cartOpen: !state.cartOpen
+      };
 
     case CLEAR_CART:
       return {
