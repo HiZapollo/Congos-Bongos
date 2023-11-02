@@ -72,7 +72,7 @@ db.once('open', async () => {
             image: 'ExpensiveBongo!.jpg',
             quantity: 3,
             price: 4000000,
-            types: [types[2]._id, types[4]._id]
+            types: [types[2]._id, types[5]._id]
         },
         {
             name: 'Hand-Crafted Bongo',
@@ -87,7 +87,7 @@ db.once('open', async () => {
             name: 'Handlebar Bongo',
             description:
                 'A bongo so powerful that you need to brace yourself whenever you unleash its rhythym.',
-            image: 'HandlebarBongo.jpg',
+            image: 'HandleBarBongo.jpg',
             quantity: 466,
             price: 156.22,
             types: [types[1]._id, types[3]._id]
