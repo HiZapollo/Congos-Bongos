@@ -1,10 +1,69 @@
-.bongo-card{
-    max-width: 500px;
-    max-height: 500px;
-}
-
-.bongo-pic {
-    max-width: 50%;
+/* Default styles for the bongo card */
+.bongo-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+    max-width: 280px;
+  }
+  
+  .bongo-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bongo-card a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .bongo-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .bongo-pic {
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    /* Add any additional styles you might need */
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .bongo-card p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .bongo-card div {
+    margin-bottom: 10px;
+  }
+  
+  .bongo-card span {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .bongo-card button {
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bongo-card button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .bongo-card {
+      max-width: 90%;
+    }
   }
