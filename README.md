@@ -1,73 +1,57 @@
-# Congo Bongo
+# Congo Bongos
 
-![Congo Bongo Logo](./path/to/logo.png) <!-- We'll need a future logo-->
+Welcome to Congo Bongos, your one-stop shop for all things Bongos!
 
-Congo Bongo is the premier online destination for Congo enthusiasts. Dive into our immersive platform, where you'll find everything related to the mesmerizing world of Congos – from buying your first instrument to mastering advanced techniques.
+![Congo Bongos Logo](./assets/bongo.svg)
 
 ## Table of Contents
 
-- [Features](#features)
+- [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Features](#features)
 - [Contributing](#contributing)
-- [Contact](#contact)
+- [License](#license)
 
-## Features
+## About
 
-- **Congo Marketplace**: Discover a wide variety of Congos, from beginner-friendly models to professional-grade instruments.
+Congo Bongos is an e-commerce platform dedicated to bongo enthusiasts around the world. Whether you're a professional percussionist or just starting out, our platform offers a wide range of bongos tailored to your needs.
 
 ## Installation
 
-1. Clone the repository:
+To get started with Congo Bongos:
 
-\```bash
-git clone https://github.com/your-username/congo-bongo.git
-\```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/HiZapollo/Congos-Bongos.git
+   ```
 
 2. Navigate to the project directory:
+   ```bash
+   cd congo-bongos
+   ```
 
-\```bash
-cd congo-bongo
-\```
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-3. Install the required packages:
+4. Start the application:
+   ```bash
+   npm start
+   ```
 
-\```bash
-npm install
-\```
-
-4. Start the server:
-
-\```bash
-npm start
-\```
-
-5. Open your browser and navigate to `http://localhost:5000`.
+The application should now be running on `http://localhost:3001`.
 
 ## Usage
 
-- **For Users**:
-  - Register on the platform to access exclusive content and community features.
-  - Browse the marketplace, read reviews, and make informed decisions.
-  - Participate in community discussions and connect with fellow Congo enthusiasts.
+Browse our collection of bongos, read more about each product, and make a purchase directly from our platform. If you have any questions or need assistance, feel free to reach out to our dedicated support team.
 
-- **For Admins**:
-  - Monitor user activity and ensure a safe and welcoming environment.
-  - Manage product listings in the marketplace.
-  - Curate and upload educational content to the learning hub.
+## Features
 
-## Contributing
+- Browse Bongos: View our wide range of bongos available for purchase.
+- Product Details: Get detailed information about each bongo.
+- User Authentication: Secure login and signup features.
+- Search: Find the perfect bongo based on your preferences.
+- And much more!
 
-We welcome contributions from the community! If you'd like to contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch with a descriptive name.
-3. Make your changes.
-4. Submit a pull request detailing your changes.
-
-
-## Contact
-
-- **Website**: [www.congo-bongo.com](#)
-- **Email**: support@congo-bongo.com
-- **Twitter**: [@congo_bongo](#)
