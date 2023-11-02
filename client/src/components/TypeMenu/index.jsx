@@ -5,7 +5,7 @@ import {
   UPDATE_TYPES,
   UPDATE_CURRENT_TYPE,
 } from '../../utils/actions';
-import { QUERY_TYPES } from '../../utils/queries';
+import { GET_TYPES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
 function TypeMenu() {
@@ -13,7 +13,7 @@ function TypeMenu() {
 
   const { types } = state;
 
-  const { loading, data: typeData } = useQuery(QUERY_TYPES);
+  const { loading, data: typeData } = useQuery(GET_TYPES);
 
   useEffect(() => {
     if (typeData) {
