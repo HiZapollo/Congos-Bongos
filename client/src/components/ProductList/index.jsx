@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client';
 import { GET_SINGLE_BONGO } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
+import './productlist.css';
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
@@ -44,10 +45,11 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
+    
+    <div className>
       <h2>Our Bombastic Bongos:</h2>
       {state.products.length ? (
-        <div className="flex-row">
+        <div className="bongo-list">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
