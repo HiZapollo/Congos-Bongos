@@ -8,7 +8,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 //import './style.css';
-
+//a
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_51O7xoBFsxKRhR6xy7NCEbsatP4pnvaBICu7elWzUgfabOlv2Vvr06MtJlyDg40Un71cjOYMSEEgLDReK5DZEBMV100JlyksqWi');
 
