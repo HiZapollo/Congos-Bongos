@@ -1,4 +1,5 @@
-import decode from 'jwt-decode';// This works totally fine
+import * as jwtDecode from 'jwt-decode';
+const { decode } = jwtDecode;
 
 class AuthService {
   getProfile() {
