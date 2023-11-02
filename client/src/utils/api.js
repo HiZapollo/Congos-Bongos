@@ -68,3 +68,4 @@ export const registerUser = async (userInfo) => {
         throw error;
     }
 };
+
