@@ -5,7 +5,7 @@ function AboutUs() {
     const containerStyle = {
         border: 'rgb(36, 21, 5) solid 2px',
         borderRadius: '5px',
-        padding: '15px',
+        padding: '25px',
         margin: '10px',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
         background: 'linear-gradient(to top right, rgb(114, 96, 61), rgb(170, 143, 92))',
@@ -17,7 +17,8 @@ function AboutUs() {
     const h1Style = {
         fontSize: '24px',
         fontWeight: 'bold',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        marginTop: '0px'
     };
 
     const h2Style = {
@@ -29,7 +30,8 @@ function AboutUs() {
 
     const pStyle = {
         fontSize: '18px',
-        marginBottom: '15px'
+        marginBottom: '15px',
+        marginTop: '40px'
     };
 
     return (
