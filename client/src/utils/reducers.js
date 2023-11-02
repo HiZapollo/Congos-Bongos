@@ -1,4 +1,3 @@
-import { UPDATE_CURRENT_TYPE, UPDATE_TYPES } from "./actions";
 import {
   UPDATE_PRODUCTS,
   ADD_TO_CART,

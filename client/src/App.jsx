@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
     ApolloClient,
@@ -7,6 +6,7 @@ import {
     createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { StoreProvider } from './utils/GlobalState';
 // import Aboutus from './pages/Aboutus';
 // import Error from './pages/Error';
 // import Home from './pages/Home';
@@ -39,8 +39,10 @@ const client = new ApolloClient({
 function App() {
     return (
         <ApolloProvider client={client}>
-            {/*Add nav here - jr*/}
-            <Outlet />
+            <StoreProvider>
+                {/*Add nav here - jr*/}
+                <Outlet />
+            </StoreProvider>
         </ApolloProvider>
         // <Router>
         //     <div className="header">
