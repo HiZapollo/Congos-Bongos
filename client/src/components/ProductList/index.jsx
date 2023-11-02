@@ -39,7 +39,7 @@ function ProductList() {
     }
 
     return state.products.filter(
-      (product) => product.types._id === currentType
+      (product) => product.types.some(type => type._id === currentType)
     );
   }
 
