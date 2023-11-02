@@ -21,11 +21,11 @@ function Nav() {
                         </a>
                     </li>
                     {/*ADD LINK ONCE PROFILE PAGE IS MADE */}
-                    <li className="mx-1">
+                    {/* <li className="mx-1">
                         <Link to="/">
                             <img src={profileIcon} alt="Home" />
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             );
         } else {
