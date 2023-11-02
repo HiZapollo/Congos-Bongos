@@ -2,7 +2,7 @@
 
 Welcome to Congo Bongos, your one-stop shop for all things Bongos!
 
-![Congo Bongos Logo](./assets/CongoBongoLogo.png)
+![Congo Bongos Logo](/client/src/assets/CongoBongoLogo.png)
 
 ## Table of Contents
 
