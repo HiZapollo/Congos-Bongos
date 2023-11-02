@@ -33,16 +33,18 @@
     padding: 8px 12px;
     background: linear-gradient(to top right, rgb(114, 96, 61), rgb(170, 143, 92));
     color: #333;
-    border: none;
+    border: grey 1px outset;
     border-radius: 4px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.6s ease;
     max-width: 125px;
     min-width: 125px;
   }
   
-  button:hover {
+  .type-button:hover {
+    border: grey 1px inset;
+    background: linear-gradient(to top right, rgb(170, 143, 92), rgb(114, 96, 61) );
     background-color: #2980b9;
   }
   

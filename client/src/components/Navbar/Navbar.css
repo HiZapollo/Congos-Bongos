@@ -28,18 +28,23 @@ header {
   }
   
   li {
-    margin: 10px 10px;
+    margin: 0 10px;
+    list-style: none;
   }
   
   a {
     text-decoration: none;
     color: white;
   }
+
+  a:hover {
+    color: rgb(115, 158, 122);
+  }
   
   /* Profile icon styles */
   header img[alt="Home"] {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
   }
   
