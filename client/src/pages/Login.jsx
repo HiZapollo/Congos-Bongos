@@ -65,7 +65,6 @@ function Login(props) {
           justify-content: center;
           align-items: center;
           height: 100vh;
-          background-color: #f4f4f4;
         }
         .box {
           width: 100%;
@@ -75,15 +74,13 @@ function Login(props) {
           background-color: #fff;
           border-radius: 8px;
         }
+        .box form div {
+            margin-bottom: 1rem;
+        }
         h2 {
           text-align: center;
           margin-bottom: 1.5rem;
           color: #333;
-        }
-        .flex-row {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 1rem;
         }
         label {
           margin-bottom: 0.5rem;
