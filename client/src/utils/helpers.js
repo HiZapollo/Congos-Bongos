@@ -1,3 +1,4 @@
+
 // Formats price to a standard currency display (e.g., $100.00)
 export const formatPrice = (price) => {
     if (typeof price !== 'number' || isNaN(price)) {
@@ -64,3 +65,4 @@ export const sizeToLabel = (size) => {
     };
     return sizeMap[size] || size;
 };
+
