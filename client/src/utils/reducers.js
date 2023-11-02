@@ -1,11 +1,12 @@
+import { UPDATE_CURRENT_TYPE, UPDATE_TYPES } from "./actions";
 import {
   UPDATE_PRODUCTS,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
   ADD_MULTIPLE_TO_CART,
-  UPDATE_CATEGORIES,
-  UPDATE_CURRENT_CATEGORY,
+  UPDATE_TYPES,
+  UPDATE_CURRENT_TYPE,
   CLEAR_CART,
 } from "./actions";
 
@@ -42,18 +43,18 @@ export const reducer = (state, action) => {
         })
       };
 
-      case REMOVE_FROM_CART: {
-        let newState = state.cart.filter(product => {
-          return product._id !== action._id;
-        });
-      
-        return {
-          ...state,
-          cartOpen: newState.length > 0,
-          cart: newState
-        };
-      }
-      
+    case REMOVE_FROM_CART: {
+      let newState = state.cart.filter(product => {
+        return product._id !== action._id;
+      });
+
+      return {
+        ...state,
+        cartOpen: newState.length > 0,
+        cart: newState
+      };
+    }
+
 
     case CLEAR_CART:
       return {
@@ -62,16 +63,16 @@ export const reducer = (state, action) => {
         cart: []
       };
 
-    case UPDATE_CATEGORIES:
+    case UPDATE_TYPES:
       return {
         ...state,
-        categories: [...action.categories],
+        types: [...action.types],
       };
 
-    case UPDATE_CURRENT_CATEGORY:
+    case UPDATE_CURRENT_TYPE:
       return {
         ...state,
-        currentCategory: action.currentCategory
+        currentType: action.currentType
       }
 
     default:
