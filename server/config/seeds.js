@@ -84,7 +84,7 @@ db.once('open', async () => {
             types: [types[2]._id, types[3]._id]
         },
         // {
-        //     name: '',
+        //     name: 'Handlebar Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -93,7 +93,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Inflatable Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -102,7 +102,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Skinned Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -111,7 +111,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Traditional Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -120,7 +120,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Tribal Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -129,7 +129,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Two-Sided Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -138,7 +138,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Catch and Release Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -147,7 +147,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Wooden Top Bongo',
         //     description:
         //         '',
         //     image: '',
@@ -156,7 +156,7 @@ db.once('open', async () => {
         //     types: []
         // },
         // {
-        //     name: '',
+        //     name: 'Yellow Bongo (w/stand)',
         //     description:
         //         '',
         //     image: '',
