@@ -35,10 +35,14 @@ To get started with Congo Bongos:
    ```bash
    npm install
    ```
-
-4. Start the application:
+4. Seed the repository:
    ```bash
-   npm start
+   npm run seed
+   ```   
+
+5. Start the application:
+   ```bash
+   npm run develop
    ```
 
 The application should now be running on `http://localhost:3001`.
