@@ -2,7 +2,8 @@
 
 Welcome to Congo Bongos, your one-stop shop for all things Bongos!
 
-![Congo Bongos Logo](![image](https://github.com/HiZapollo/Congos-Bongos/assets/71670415/395e8208-9d3f-4c28-9577-9665cb13f68c))
+![image](https://github.com/HiZapollo/Congos-Bongos/assets/71670415/3d6dceba-7367-4930-a02e-19d8bfd19beb)
+
 
 ## Table of Contents
 
