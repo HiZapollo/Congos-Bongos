@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { StoreProvider } from './utils/GlobalState';
+import JungleBackground from "./assets/JungleBackground.jpg"
 import './App.css';
 
 const httpLink = createHttpLink({
@@ -34,6 +35,7 @@ function App() {
         <ApolloProvider client={client}>
             <StoreProvider>
                 <Navbar />
+
                 <Outlet />
             </StoreProvider>
         </ApolloProvider>
