@@ -40,7 +40,7 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <StoreProvider>
-                {/*Add nav here - jr*/}
+                <Navbar />
                 <Outlet />
             </StoreProvider>
         </ApolloProvider>
