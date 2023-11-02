@@ -57,7 +57,7 @@ const Cart = () => {
 
     getCheckout({
       variables: { 
-        products: [...state.cart],
+        bongos: [...state.cart],
       },
     });
   }
