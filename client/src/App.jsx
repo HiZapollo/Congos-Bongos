@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from "./components/Navbar"
 import {
     ApolloClient,
     InMemoryCache,
@@ -7,14 +7,7 @@ import {
     createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-// import Aboutus from './pages/Aboutus';
-// import Error from './pages/Error';
-// import Home from './pages/Home';
-// import Login from './pages/Login';
-// import ProductDetail from './pages/Productdetail';
-// import SearchResult from './pages/SearchResult';
-// import Signup from './pages/Signup';
-//import bongoLogo from './assets/bongo.svg'; // Assuming you have a bongo logo in assets
+import { StoreProvider } from './utils/GlobalState';
 import './App.css';
 
 const httpLink = createHttpLink({
@@ -39,8 +32,10 @@ const client = new ApolloClient({
 function App() {
     return (
         <ApolloProvider client={client}>
-            {/*Add nav here - jr*/}
-            <Outlet />
+            <StoreProvider>
+                <Navbar />
+                <Outlet />
+            </StoreProvider>
         </ApolloProvider>
         // <Router>
         //     <div className="header">

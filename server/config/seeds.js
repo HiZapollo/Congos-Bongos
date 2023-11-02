@@ -83,87 +83,87 @@ db.once('open', async () => {
             price: 250.32,
             types: [types[2]._id, types[3]._id]
         },
-        // {
-        //     name: 'Handlebar Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Inflatable Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Skinned Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Traditional Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Tribal Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Two-Sided Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Catch and Release Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Wooden Top Bongo',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
-        // {
-        //     name: 'Yellow Bongo (w/stand)',
-        //     description:
-        //         '',
-        //     image: '',
-        //     quantity: 1,
-        //     price: 0,
-        //     types: []
-        // },
+        {
+            name: 'Handlebar Bongo',
+            description:
+                'A bongo so powerful that you need to brace yourself whenever you unleash its rhythym.',
+            image: 'HandlebarBongo.jpg',
+            quantity: 466,
+            price: 156.22,
+            types: [types[1]._id, types[3]._id]
+        },
+        {
+            name: 'The Executive \"Inflatable Bongos\"',
+            description:
+                'Perhaps the most difficult bongo to master. Not for the faint of rhythym.',
+            image: 'inflatableBongo.jpg',
+            quantity: 20,
+            price: 5.00,
+            types: [types[2]._id, types[4]._id]
+        },
+        {
+            name: 'Skinned Bongo',
+            description:
+                'The bongo with the skin tops and a wooden shell. You can hear a beat when it\'s not being played...',
+            image: 'SkinnedBongo.png',
+            quantity: 666,
+            price: 0.01,
+            types: [types[1]._id, types[3]._id, types[6]._id]
+        },
+        {
+            name: 'Traditional Bongo',
+            description:
+                'A traditional bongo, checks all the right boxes. (child not affiliated with Congo Bongo)',
+            image: 'TraditionalBongo.jpg',
+            quantity: 78,
+            price: 76.93,
+            types: [types[0]._id, types[3]._id]
+        },
+        {
+            name: 'Tribal Bongo',
+            description:
+                'Authentic tribal bongos, rich with history that can only be accessed by the most skilled bongophiles.',
+            image: 'TribalBongo.jpg',
+            quantity: 34,
+            price: 5000.78,
+            types: [types[2]._id, types[3]._id]
+        },
+        {
+            name: 'Two-Sided Bongo',
+            description:
+                'The bongo inside you has two sides: one side, and the other side.',
+            image: 'TwoSidedBongo.jpg',
+            quantity: 67,
+            price: 500.34,
+            types: [types[1]._id, types[3]._id]
+        },
+        {
+            name: 'Catch and Release Bongo',
+            description:
+                'Very lively bongos. Note: These are not instruments, DO NOT use them as drums.',
+            image: 'WildCaughtBongo.png',
+            quantity: 500,
+            price: 91320.34,
+            types: [types[6]._id]
+        },
+        {
+            name: 'Wooden Top Bongo',
+            description:
+                'We are pretty sure this is a bongo, can\'t be too hard to use, right?',
+            image: 'WoodenTopBongo.jpg',
+            quantity: 45,
+            price: 21.21,
+            types: [types[0]._id, types[3]._id]
+        },
+        {
+            name: 'Yellow Bongo (w/stand)',
+            description:
+                'This premium bongo comes with its very own stand! Very groovy style.',
+            image: 'YellowBongoWithStand.png',
+            quantity: 343,
+            price: 654.01,
+            types: [types[2]._id, types[3]._id]
+        },
     ]);
 
     console.log('bongos seeded');
@@ -179,90 +179,3 @@ db.once('open', async () => {
 
     process.exit();
 });
-
-// const userSeedData = [
-//     {
-//         username: 'john_doe',
-//         email: 'john.doe@example.com',
-//         password: 'password1234'
-//     },
-//     {
-//         username: 'jane_smith',
-//         email: 'jane.smith@example.com',
-//         password: 'securepassword'
-//     }
-//     // Add more users as needed...
-// ];
-
-// const typeSeedData = [
-//     {
-//         name: 'Beginner'
-//     },
-//     {
-//         name: 'Intermediate'
-//     },
-//     {
-//         name: 'Professional'
-//     }
-// ];
-
-// const bongoSeedData = [
-//     {
-//         name: 'Basic Congo',
-//         description: 'Perfect for beginners',
-//         image: '/path/to/basic-congo-image.jpg',  // Replace with actual path or URL
-//         quantity: 10,
-//         price: 100.00,
-//         types: []  // Will populate with Type IDs
-//     },
-//     {
-//         name: 'Pro Congo',
-//         description: 'For the professional player',
-//         image: '/path/to/pro-congo-image.jpg',
-//         quantity: 5,
-//         price: 300.00,
-//         types: []
-//     }
-//     // Add more bongos as needed...
-// ];
-
-// const orderSeedData = [
-//     {
-//         purchaseDate: new Date(),
-//         products: []  // Will populate with Bongo IDs
-//     }
-//     // Add more orders as needed...
-// ];
-
-// // Seed the database with the sample data
-// db.once('open', async () => {
-//     try {
-//         await User.deleteMany({});
-//         await Type.deleteMany({});
-//         await Bongo.deleteMany({});
-//         await Order.deleteMany({});
-
-//         const users = await User.insertMany(userSeedData);
-//         const types = await Type.insertMany(typeSeedData);
-        
-//         for (let bongo of bongoSeedData) {
-//             const randomTypeIndex = Math.floor(Math.random() * types.length);
-//             bongo.types.push(types[randomTypeIndex]._id);
-//         }
-
-//         const bongos = await Bongo.insertMany(bongoSeedData);
-
-//         for (let order of orderSeedData) {
-//             const randomBongoIndex = Math.floor(Math.random() * bongos.length);
-//             order.products.push(bongos[randomBongoIndex]._id);
-//         }
-
-//         await Order.insertMany(orderSeedData);
-
-//         console.log('All data seeded successfully!');
-//         process.exit(0);
-//     } catch (err) {
-//         console.error('Error seeding data:', err);
-//         process.exit(1);
-//     }
-// });
