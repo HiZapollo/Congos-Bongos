@@ -5,7 +5,7 @@
     min-width: 20%;
     max-width: 30%;
     max-height: 60%;
-    background-color: var(--light);
+    background: linear-gradient(to top right, rgb(4, 126, 4, .5), rgb(4, 126, 4, .3));
     overflow: auto;
     padding: .5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
