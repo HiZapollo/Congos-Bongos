@@ -53,11 +53,16 @@ export const REMOVE_BONGO = gql`
 export const ADD_ORDER = gql`
     mutation AddOrder($bongos: [ID]!) {
         addOrder(bongos: $bongos) {
-            _id
             purchaseDate
             bongos {
                 _id
                 name
+                description
+                price
+                quantity
+                types {
+                    name
+                }
             }
         }
     }

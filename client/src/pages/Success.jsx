@@ -5,37 +5,40 @@ import { ADD_ORDER } from '../utils/mutations';
 import { idbPromise } from '../utils/helpers';
 
 function Success() {
-  const [addOrder] = useMutation(ADD_ORDER);
+    const [addOrder] = useMutation(ADD_ORDER);
 
-  useEffect(() => {
-    async function saveOrder() {
-      const cart = await idbPromise('cart', 'get');
-      const products = cart.map((item) => item._id);
+    useEffect(() => {
+        async function saveOrder() {
+            const cart = await idbPromise('cart', 'get');
+            const bongos = cart.map((item) => item._id);
 
-      if (products.length) {
-        const { data } = await addOrder({ variables: { bongos } });
-        const productData = data.addOrder.bongos;
+            if (bongos.length) {
+                const { data } = await addOrder({ variables: { bongos } });
+                const productData = data.addOrder.bongos;
 
-        productData.forEach((item) => {
-          idbPromise('cart', 'delete', item);
-        });
-      }
+                productData.forEach((item) => {
+                    idbPromise('cart', 'delete', item);
+                });
+            }
 
-      setTimeout(() => {
-        window.location.assign('/');
-      }, 3000);
-    }
+              setTimeout(() => {
+                window.location.assign('/');
+              }, 3000);
+        }
 
-    saveOrder();
-  }, [addOrder]);
+        saveOrder();
+    }, [addOrder]);
 
-  return (
-    <div>
-        <h1>Success!</h1>
-        <h2>Thank you for your purchase!</h2>
-        <h2>You will now be redirected to the home page</h2>
-    </div>
-  );
+    return (
+        <div className='success-container'>
+            <h1>Success!</h1>
+            <div>
+                <h2>Thank you for your purchase!</h2>
+                <h2>You will now be redirected to the home page</h2>
+            </div>
+
+        </div>
+    );
 }
 
 export default Success;

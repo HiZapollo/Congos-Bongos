@@ -36,3 +36,22 @@ z-index: -1;
     display: flex;
     justify-content: right;
 }
+
+/* Success Page */
+
+.success-container {
+    border: rgb(36, 21, 5) solid 2px;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto; /* Setting the left and right margin to auto centers the element */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background: linear-gradient(to top right, rgb(114, 96, 61), rgb(170, 143, 92));
+    max-width: 500px;
+    text-align: center;
+}
+
+.success-container div {
+    margin-top: 4rem;
+}
+
