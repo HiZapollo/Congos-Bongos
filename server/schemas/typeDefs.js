@@ -26,7 +26,7 @@ const typeDefs = `
         type Order {
             _id: ID
             purchaseDate: String
-            Bongos: [Bongo]
+            bongos: [Bongo]
         }
 
         input UserInput {
@@ -38,17 +38,17 @@ const typeDefs = `
         }
 
         input BongoInput {
+            _id: ID
+            purchaseQuantity: Int
             name: String
-            description: String
             image: String
             quantity: Int
             price: Float
-            types: [ID] # Assuming this is a list of Type IDs
         }
 
         input OrderInput {
             purchaseDate: String
-            Bongos: [ID] # Assuming this is a list of Bongo IDs
+            bongos: [ID] # Assuming this is a list of Bongo IDs
         }
         
         type Checkout {

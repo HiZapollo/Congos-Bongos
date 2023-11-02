@@ -1,6 +1,6 @@
 const { User, Bongo, Type, Order  } = require('../models')
 const { signToken, AuthenticationError } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51O7xoBFsxKRhR6xyVUyK4wg3RwfLXMeTmSzn0mQl6gZM6oBKlPN6NZ5bbAxNAdYuveXCbQTL2iem8fzGbR96vL0F00zrMAFbMk');
 
 const resolvers = {
     Query: {
@@ -62,7 +62,7 @@ const resolvers = {
           line_items.push({
             price_data: {
               currency: 'usd',
-              bongo_data: {
+              product_data: {
                 name: bongo.name,
                 description: bongo.description,
                 images: [`${url}/images/${bongo.image}`]
