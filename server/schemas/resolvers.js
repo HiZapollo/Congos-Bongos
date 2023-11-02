@@ -1,6 +1,6 @@
 const { User, Bongo, Type, Order  } = require('../models')
 const { signToken, AuthenticationError } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_51O74PnDyudsQNOyEZIPgELCj3gGjDvFoLW5hPKjW2Lx5k7FGEQ3gkDKI7Hp5k0xpG3JzOMdXCVUMzYEItHJwFRUO00jJ9o07Uq');
+const stripe = require('stripe')('sk_test_51O7xoBFsxKRhR6xyVUyK4wg3RwfLXMeTmSzn0mQl6gZM6oBKlPN6NZ5bbAxNAdYuveXCbQTL2iem8fzGbR96vL0F00zrMAFbMk');
 
 const resolvers = {
     Query: {
